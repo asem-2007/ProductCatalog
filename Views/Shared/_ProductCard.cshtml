@@ -1,0 +1,23 @@
+@model Product
+
+<div class="card h-100 shadow-sm">
+    <div class="card-header bg-primary text-white">
+        <h5 class="mb-0">@Model.Name</h5>
+    </div>
+    <div class="card-body">
+        <p class="mb-1"><strong>ID:</strong> @Model.Id</p>
+        <p class="mb-1"><strong>Санаты:</strong> @Model.Category</p>
+        <p class="mb-2"><strong>Бағасы:</strong> @Model.Price.ToString("N0") ₸</p>
+        @if (Model.IsAvailable)
+        {
+            <span class="badge bg-success">Қоймада бар</span>
+        }
+        else
+        {
+            <span class="badge bg-danger">Қоймада жоқ</span>
+        }
+    </div>
+    <div class="card-footer bg-white">
+        <a class="btn btn-outline-primary btn-sm" asp-controller="Product" asp-action="Details" asp-route-id="@Model.Id">Толығырақ</a>
+    </div>
+</div>

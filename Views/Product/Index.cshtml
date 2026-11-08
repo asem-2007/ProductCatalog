@@ -1,0 +1,15 @@
+@model IEnumerable<Product>
+@{
+    ViewData["Title"] = ViewBag.Title;
+}
+<h2 class="mb-3">@ViewBag.Title</h2>
+<p class="text-muted">Барлығы: @ViewBag.TotalCount, қолжетімді: @ViewBag.AvailableCount</p>
+
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    @foreach (var product in Model)
+    {
+        <div class="col">
+            <partial name="_ProductCard" model="product" />
+        </div>
+    }
+</div>

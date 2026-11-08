@@ -1,0 +1,10 @@
+@model Product
+@{
+    ViewData["Title"] = Model.Name;
+}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <partial name="_ProductCard" model="Model" />
+        <a class="btn btn-secondary mt-3" asp-action="Index">← Тізімге қайту</a>
+    </div>
+</div>
